@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray, tipa}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth, label style/.append style={font=\footnotesize}}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\newcommand{\arc}[1]{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}
+
+\begin{document}
+
+\section*{Compound Probability}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Identify independent and dependent events.
+    \item Find compound probabilities.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Compound Event}]
+An event that is made up of 2 or more events.
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Independent Events}]
+When the occurrence of one event \textbf{does not affect} how another event occurs.
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Dependent Events}]
+When the occurrence of one event \textbf{does affect} how another event occurs.
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+Determine if the outcomes of each of the following trials are independent or dependent events.
+\begin{enumerate}[(a)]
+    \item Choose a number tile from 12 tiles. Then spin a spinner.  \\[0.25in]
+    \item Pick one card from a standard deck of cards. Then, without replacing the card, pick another card. \\[0.25in]
+    \item Pick one card from a standard deck of cards. Then, replace the card and pick another card.    \\[0.25in]
+\end{enumerate}
+\end{example}
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Probability of Independent Events}]
+If $A$ and $B$ are independent events, then 
+\[
+P(A \text{ and } B) = P(A) \cdot P(B)
+\]
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+A desk drawer contains 5 red pens, 6 blue pens, 3 black pens, 24 silver paper clips, and 16 gold paper clips. \newline 
+
+If you select a pen and paper clip from the drawer without looking, find each probability.
+
+\begin{enumerate}[(a)]
+\begin{multicols}{2}
+    \item Select a blue pen and gold paper clip.
+    \item Select a red pen and a silver paper clip.
+\end{multicols}
+\end{enumerate}
+\end{example}
+
+\newpage 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Mutually Exclusive Events}]
+Events that cannot happen at the same time. \newline 
+
+If $A$ and $B$ are mutually exclusive events, then 
+\begin{itemize}
+    \item $P(A \text{ and } B) = 0$
+    \item $P(A \text{ or } B) = P(A) + P(B)$
+\end{itemize}
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+Student athletes at a local high school may participate in only one sport each season. During the fall season, 28\% of student athletes play basketball and 24\% are on the swim team. What is the probability that a randomly selected student athlete plays basketball or is on the swim team?
+\end{example}
+
+\vspace{1in}
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Overlapping Events}]
+Events that have outcomes in common. \newline 
+
+If $A$ and $B$ are overlapping events, then 
+\[
+P(A \text{ or } B) = P(A) + P(B) - P(A \text{ and } B)
+\]
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+A single die is rolled once. 
+
+\begin{enumerate}[(a)]
+    \item What is the probability of rolling either an even number or  a multiple of 3? \vspace{1.5in}
+    \item What is the probability of rolling either an odd number or a number less than 4?
+\end{enumerate}
+
+\end{example}
+
+\end{document}

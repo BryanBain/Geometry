@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray, tipa}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth, label style/.append style={font=\footnotesize}}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\newcommand{\arc}[1]{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}
+
+\begin{document}
+
+\section*{Probability Distributions and Frequency Tables}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Make and use frequency tables and probability distributions.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Frequency Table}]
+A data display that shows how often an item appears in a category.
+\end{tcolorbox}
+\smallskip 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Relative Frequency}]
+The ratio of the frequency of the category to the total frequency. 
+\begin{itemize}
+    \item Relative frequency is often given as a percentage.
+\end{itemize}
+\end{tcolorbox}
+\smallskip 
+
+\begin{example}
+The results of a survey of students' music preferences are organized in the frequency table below. Find the relative frequency for each of the following types of music.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c}
+        \textbf{Music Type} & Rock & Hip Hop& Country & Alternative & Classical & Other \\ \hline 
+        \textbf{Frequency} & 10 & 7 & 8 & 5 & 6 & 4 
+    \end{tabular}
+\end{center}
+\bigskip 
+
+\begin{multicols}{4}
+\begin{enumerate}[(a)]
+    \item Rock
+    \item Classical
+    \item Hip Hop
+    \item Country
+\end{enumerate}
+\end{multicols}
+\end{example}
+
+\vfill 
+
+\begin{example}
+A student conducts a probability experiment by tossing 3 coins at the same time. The results of each possible outcome, along with their frequencies, are shown below. Find the probability of each event.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+        \textbf{Coin Toss Result} & HHH & HHT & HTT & HTH & THH & THT & TTH & TTT \\ \hline 
+        \textbf{Frequency} & 5 & 7 & 9 & 6 & 2 & 9 & 10 & 2 
+    \end{tabular}
+\end{center}
+\bigskip 
+
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+    \item Exactly 2 tails occur
+    \item No tails occur
+\end{enumerate}
+\end{multicols}
+\end{example}
+
+\vfill 
+\newpage 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Probability Distribution}]
+A listing of each possible outcome along with its associated probability.
+\begin{itemize}
+    \item Often times shown in a frequency table.
+\end{itemize}
+\end{tcolorbox}
+\bigskip 
+
+\begin{example}
+In a recent archery competition, 50 archers show 6 arrows each at a target. Three archers hit no bulls-eyes, 5 hit one bulls-eyes, 7 hit two bulls-eyes, 7 hit three bulls-eyes, 11 hit four bulls-eyes, 10 hit five bulls-eyes, and 7 hit six bulls-eyes. \newline
+
+Fill in the table to create a probability distribution for the number of bulls-eyes each archer hit.
+\bigskip 
+
+\begin{center}
+    \setlength{\extrarowheight}{10pt}
+    \begin{tabular}{c|p{0.25in}|p{0.25in}|p{0.25in}|p{0.25in}|p{0.25in}|p{0.25in}|p{0.25in}}
+        \textbf{Number of Bulls-Eyes} & & & & & & & \\[10pt] \hline 
+        \textbf{Frequency} & & & & & & & \\[10pt] \hline
+        \textbf{Probability} & & & & & & & \\[10pt] 
+    \end{tabular}
+\end{center}
+\end{example}
+
+\end{document}

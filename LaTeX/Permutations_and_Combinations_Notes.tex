@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray, tipa}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth, label style/.append style={font=\footnotesize}}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\newcommand{\arc}[1]{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}
+
+\begin{document}
+
+\section*{Permutations and Combinations}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Use permutations and combinations to solve problems.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Fundamental Counting Rule}]
+If event $M$ can occur in $m$ ways and event $N$ occurs in $n$ ways, then event $M$ followed by event $N$ can occur in $m \cdot n$ ways.
+
+\begin{itemize}
+    \item Can also be used for situations that involve more than two events.
+\end{itemize}
+\end{tcolorbox}
+\smallskip 
+
+\begin{example}
+A deli offers a lunch special if you choose one from each of the following types of sandwiches, side items, and drink choices. How many different lunch specials are possible?
+
+\begin{center}
+    \begin{tabular}{c|c|c}
+        \textbf{Sandwiches} & \textbf{Side Items} & \textbf{Drinks} \\ \hline 
+        ham \& turkey & chips & juice \\
+        salami & potato salad & iced tea \\
+        tuna & fruit salad & lemonade \\
+        club & garden salad & milk \\ 
+        veggie & & water \\ 
+        meatball & & 
+    \end{tabular}
+\end{center}
+\end{example}
+\bigskip 
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Permutation}]
+An arrangement of items in which \textbf{the order of the objects is important.} 
+
+\begin{itemize}
+    \item Can use factorial notation ($n!$) where
+    \[
+    n! = n(n-1)(n-2)\cdot \dots \cdot 3 \cdot 2 \cdot 1
+    \]
+    and $0! = 1$
+\end{itemize}
+\end{tcolorbox}
+\smallskip 
+
+\begin{example}
+\begin{enumerate}[(a)]  \setlength{\itemsep}{30pt}
+    \item You download 8 songs on your phone. If you play the songs using the random shuffle option, how many different ways can the sequence of songs be played?
+    \item In how many ways can you arrange 12 books on a shelf?
+\end{enumerate}
+\end{example}
+\vspace{30pt}
+
+If you only want to play some (such as 3) of the 8 songs you downloaded, you have
+
+\begin{center}
+    8 ways to select the 1st song $\times$ 7 ways to select the 2nd song $\times$ 6 ways to select the 3rd song
+\end{center}
+
+\newpage
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Permutation Notation}]
+The number of permutations of $n$ items of a set arranged $r$ items at a time is
+\[
+_nP_r = \frac{n!}{(n-r)!} \quad \text{for } 0 \leq r \leq n
+\]
+\smallskip 
+
+\begin{itemize}
+    \item \textbf{Example:} $_8P_3 = \frac{8!}{(8-3)!} = \frac{8!}{5!} = \frac{8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{5 \cdot 4 \cdot 3 \cdot 2 \cdot 1} = 8 \cdot 7 \cdot 6 = 336$
+\end{itemize}
+\end{tcolorbox}
+\smallskip 
+
+\begin{example}
+\begin{enumerate}[(a)]
+    \item The environmental club is electing a president, vice president, a secretary, and treasurer. How many different ways can the officers be chosen from the 10 members?   \\[0.25in]
+    \item Twelve swimmers compete in a race. In how many possible ways can the swimmers finish first, second, and third?
+\end{enumerate}
+\end{example}
+
+\vspace{0.25in}
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Combination}]
+A selection of items in which \textbf{order is not important.}
+\[
+_nC_r = \frac{n!}{r!(n-r)!} \quad \text{for } 0 \leq r \leq n
+\]
+\smallskip 
+
+\begin{itemize}
+    \item \textbf{Example:} $_9C_4 = \frac{9!}{4!(9-4)!} = \frac{9!}{4!5!} = \frac{9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1}{(4 \cdot 3 \cdot 2 \cdot 1)(5 \cdot 4 \cdot 3 \cdot 2 \cdot 1)} = \frac{9 \cdot 8 \cdot 7 \cdot 6}{4 \cdot 3 \cdot 2 \cdot 1} = 126$
+\end{itemize}
+\end{tcolorbox}
+\smallskip 
+
+\begin{example}
+\begin{enumerate}[(a)]
+    \item Suppose that you choose 4 books to read on summer vacation froma reading list of 12 books. How many different combinations of the books are possible? \vspace{0.25in}
+    \item A sports club has 8 sophomores. Five of them are going to be chosen to go to a Browns game. How many different ways can the tickets be distributed?
+\end{enumerate}
+\end{example}
+\vspace{0.35in}
+
+\fbox{\fbox{To determine whether to use permutation or combination, you must decide whether order is important. }}
+\smallskip 
+
+\begin{example}
+\begin{enumerate}[(a)]
+    \item A \$100 prize, a \$50 prize, and a \$20 prize are to be given to 3 people who will be randomly chosen from a group of 15 people. How many ways can the prizes be given?   \\[0.35in]
+    \item A jury of 12 people is to be chosen from a pool of 35 candidates. How many different juries are possible? 
+\end{enumerate}
+\end{example}
+
+\vspace{0.35in}
+
+
+
+\end{document}

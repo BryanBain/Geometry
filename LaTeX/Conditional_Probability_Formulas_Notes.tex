@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray, tipa}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth, label style/.append style={font=\footnotesize}}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\newcommand{\arc}[1]{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}
+
+\begin{document}
+
+\section*{Conditional Probability Formulas}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Understand and calculate conditional probabilities.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Conditional Probability Formula}]
+For any two events $A$ and $B$, the probability of $B$ occurring, given that event $A$ has occurred is
+\[
+P(B|A) = \frac{P(A \text{ and } B)}{P(A)} \quad \text{where } P(A) \neq 0
+\]
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+In a study designed to test the effectiveness of a new drug, half of the volunteers received the drug. The other half of the volunteers received a placebo (doesn't contain medication). The probability of a volunteer receiving the drug and getting well was 45\%. 
+
+\begin{enumerate}[(a)]
+    \item What is the probability of someone getting well, given that they receive the drug?    \vspace{1in}
+    \item What is the probability that someone getting well, if they did not receive the drug? This is called \textit{the placebo effect.}  \vspace{1in}
+\end{enumerate}
+\end{example}
+\smallskip 
+
+Conditional probabilities are usually not reversible:
+\[
+P(A | B) \neq P(B | A)
+\]
+\smallskip 
+
+\begin{example}
+In a survey of pet owners, 45\% own a dog, 27\% own a cat, and 12\% own both a dog and a cat. 
+
+\begin{enumerate}[(a)]
+    \item What is the probability that a dog owner also owns a cat? \vspace{1in}
+    \item What is the probability that a cat owner also owns a dog?
+\end{enumerate}
+\end{example}
+
+\newpage 
+
+Because $P(B|A) = \frac{P(A \text{ and } B)}{P(A)}$, then $P(A \text{ and } B) = P(A) \cdot P(B|A)$ \newline\\
+
+You can use a tree diagram to help with conditional probability questions. \bigskip 
+
+\begin{example}
+A college reported the following based on their graduation data.
+\begin{itemize}
+    \item 70\% of freshmen had attended public schools
+    \item 60\% of freshmen who had attended public schools graduated within 5 years
+    \item 80\% of other freshmen graduated within 5 years
+\end{itemize}
+\bigskip 
+
+What percent of freshmen graduated within 5 years?
+
+\end{example}
+
+\end{document}

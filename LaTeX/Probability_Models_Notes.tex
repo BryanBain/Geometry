@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray, tipa}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth, label style/.append style={font=\footnotesize}}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\newcommand{\arc}[1]{%
+    \setbox9=\hbox{#1}%
+    \ooalign{\resizebox{\wd9}{\height}{\texttoptiebar{\phantom{A}}}\cr#1}}
+
+\begin{document}
+
+\section*{Probability Models}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Construct and use probability models.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Two-Way Frequency Table (a.k.a Contingency Table)}]
+A display of the frequencies of data in 2 or more different categories.
+\end{tcolorbox}
+\smallskip
+
+\begin{example}
+The table shows data about students grade level and whether or not they work part-time. Find each probability.
+
+\begin{center}  \setlength{\extrarowheight}{4pt}
+    \begin{tabular}{c|c|c|c}
+            & \textbf{Part time job} & \textbf{No part time job} & \textbf{Totals} \\[4pt] \hline 
+        \textbf{Junior} & 19 & 31 & \\[4pt] \hline 
+        \textbf{Senior} & 44 & & 50 \\[4pt] \hline 
+        \textbf{Totals} &  & 37 & 100
+    \end{tabular}
+\end{center}
+\smallskip 
+
+\begin{enumerate}[(a)]
+\begin{multicols}{2}
+    \item Junior and does not work
+    \item Senior and does work
+\end{multicols}
+\end{enumerate}
+\end{example}
+
+\vspace{1in}
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Conditional Probability}]
+The probability that an event will occur given that another event has already occurred. \newline 
+
+\begin{itemize}
+    \item The probability event $B$ occurs given that event $A$ has occurred: $P(B|A)$
+    \item The probability event $A$ occurs given that event $B$ has occurred: $P(A|B)$
+    \item Typically, whatever follows the key words and phrases \textit{if}, \textit{given that}, or \textit{suppose} is the value that goes in the denominator.
+\end{itemize}
+\end{tcolorbox}
+
+\newpage 
+
+\begin{example}
+Respondents of a poll were asked whether they were for, against, or had no opinion about a bill before the state legislature that would increase minimum wage.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+        \textbf{Age Group} & \textbf{For} & \textbf{Against} & \textbf{No Opinion} & \textbf{Total} \\ \hline 
+        \textbf{18-29} & 310 & 50 & 20 & 380 \\ \hline 
+        \textbf{30-45} & 200 & 30 & 10 & 240 \\ \hline 
+        \textbf{46-60} & 120 & 20 & 30 & 170 \\ \hline 
+        \textbf{Over 60} & 150 & 20 & 40 & 210 \\ \hline 
+        \textbf{Total} & 780 & 120 & 100 & 1000
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+    \item What is the probability that a randomly selected person is over 60 years old given that the person had no opinion?
+    \vfill 
+    \item What is the probability that a randomly selected person is 30-45 years old if the person is in favor?
+    \vfill
+    \item Suppose someone who is against the bill is selected, what is the probability that they are 18-29?
+    \vfill
+    \item What is the probability that a randomly selected person is \emph{not} 18-29, given that the person is in favor of the bill?
+\end{enumerate}
+\end{example}
+\vfill
+
+\begin{example}
+A company has 150 sales representatives. Two months after a sales seminar, the company vice-president made the table based on sales results.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c}
+            & \textbf{Attended} & \textbf{Did not attend} & \textbf{Total} \\ \hline 
+        \textbf{Increased Sales} & 0.48 & 0.02 & 0.5 \\ \hline 
+        \textbf{No increased sales} & 0.32 & 0.18 & 0.5 \\ \hline 
+        \textbf{Total} & 0.8 & 0.2 & 1
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}[(a)]
+    \item What is the probability that someone who attended the seminar had an increase in sales?
+    \vfill
+    \item What is the probability that a randomly selected sales representative, who did not attend the seminar, did not see an increase in sales?
+    \vfill
+\end{enumerate}
+\end{example}
+
+\end{document}

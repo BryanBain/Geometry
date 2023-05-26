@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath, sfmath, multicol, tkz-euclide, array, enumerate, tcolorbox, tabularray}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\parindent}{0cm}
+\pagestyle{empty}
+\usepackage[left=1in, top=0.5in, right=1in, bottom=0.5in]{geometry}
+\tikzset{>=stealth}
+\tcbset{colback=white}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   {\color{red}\textbf{Example~\theexample. #1}}}{\medskip}
+
+\begin{document}
+
+\section*{Ratios and Proportions}
+
+\begin{tcolorbox}[colframe=orange!70!white, coltitle=black, title=\textbf{Today I Can}]
+\begin{enumerate}
+    \item Write ratios and solve proportions.
+\end{enumerate}
+\end{tcolorbox}
+\smallskip
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Ratio}]
+A comparison of two quantities by division. Denoted by
+\[
+\frac{a}{b}, \quad a:b, \quad   \text{and}  \quad   a\text{ to }b
+\]
+\end{tcolorbox}
+\bigskip 
+
+\begin{example}
+\begin{enumerate}[(a)]
+    \item Members of the school band are buying pots of tulips and pots of daffodils to sell at their fundraiser. They plan to buy 120 pots of flowers. The ratio
+\[
+\frac{\text{number of tulip pots}}{\text{number of daffodil pots}}
+\]
+will be $\frac{2}{3}$. How many pots of each type of flower should they buy?
+
+\vspace{1in}
+
+    \item The measures of two supplementary angles are in the ratio 1 : 4. What are the measures of the angles?
+
+\vspace{1in}
+\end{enumerate}
+\end{example}
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Extended Ratio}]
+A comparison of three (or more) numbers. Denoted by $a$ : $b$ : $c$
+\end{tcolorbox}
+
+\begin{example}
+\begin{enumerate}[(a)]
+    \item The lengths of the sides of a triangle are in the extended ratio 3 : 5 : 6. The perimeter of the triangle is 98 in. What is the length of the longest side?
+    \vspace{1in}
+    \item The angles of a triangle are in the ratio 2 : 3 : 4. What are the measures of the angles?
+\end{enumerate}
+\end{example}
+
+\newpage
+
+\begin{tcolorbox}[colframe=black!20!white, opacitybacktitle=0.1, coltitle=black, title=\textbf{Proportion}]
+An equation with equal ratios.
+\end{tcolorbox}
+
+\begin{example}
+Solve each.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+    \item $\frac{6}{x}=\frac{5}{4}$  
+    \item $\frac{9}{2}=\frac{a}{14}$
+    \item $\frac{y+4}{9}=\frac{y}{3}$  
+\end{enumerate}
+\end{multicols}
+\end{example}
+
+
+\end{document}
